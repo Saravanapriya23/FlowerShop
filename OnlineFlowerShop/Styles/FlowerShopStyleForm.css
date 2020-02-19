@@ -1,0 +1,140 @@
+body {
+    border-width: 900px;
+    margin-left: 22%;
+}
+
+.center {
+    position: absolute;
+    width: 75%;
+    border: solid;
+    border-color: lightblue;
+}
+
+.top {
+    padding-left: 50px;
+    color: darkblue;
+}
+
+.empty {
+    padding: 20px;
+    background-color: yellowgreen;
+}
+
+.bottom {
+    background-color: yellowgreen;
+    padding: 10px;
+    color: darkblue;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+.column {
+    float: left;
+    width: 25%;
+}
+
+.list_design {
+    list-style-type: none;
+    left: 0px;
+}
+
+.flower-image {
+    padding-left: 40px;
+    padding-top: 30px;
+}
+
+.column_content {
+    float: left;
+    width: 65%;
+}
+.column_design{
+    float: left;
+    width: 10%;
+}
+
+.table_bottom {
+    background-color: #ffe4c4;
+    width: 100%;
+}
+
+h2 {
+    color: darkblue;
+}
+
+h3 {
+    color: white;
+    background-color: yellowgreen;
+}
+
+.box {
+    width: 90%;
+}
+
+.Button {
+    color: midnightblue;
+    border: none;
+    background-color: white;
+    font-size: large;
+}
+
+
+.table_design {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.hyperlink {
+    font-size: large;
+}
+#Valid {
+    display: none;
+}
+
+#ValidSecurity {
+    display: none
+}
+
+#ValidExpiry {
+    display: none
+}
+
+#ValidName {
+    display: none
+}
+
+#ValidAddress {
+    display: none
+}
+
+#ValidPhone {
+    display: none
+}
+
+#ValidTown {
+    display: none
+}
+
+#ValidPin {
+    display: none
+}
+
+#ValidMail {
+    display: none
+}
+
+#validRegion{
+    display:none;
+}
+.top_icon{
+    height: 20px;
+    width: 20px;
+    margin-top: 210px;
+}
+.bottom_icon{
+    height: 20px;
+    width: 20px;
+    margin-top: 200px;
+}

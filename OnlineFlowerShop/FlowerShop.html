@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>OnlineFlowerShop</title>
+    <link href="D:\OnlineFlowerShop\Styles\FlowerShopStyleForm.css" rel="stylesheet" type="text/css" />
+    <script src="D:\OnlineFlowerShop\Scripts\Validation.js">
+    </script>
+</head>
+<body>
+    <form id="form1">
+        <div class="center">
+            <div>
+                <header>
+                    <h2>FLOWER SHOP ONLINE</h2>
+                </header>
+            </div>
+            <div class="empty"></div>
+            <div class="row">
+                <div class="column">
+                    <img src="Images\img.png" CssClass="flower-image" />
+                </div>
+                <div class="column_content">
+                    <div>
+                        <h2>Secure Payment Page</h2>
+                        <table style="table-layout:fixed; width: 100%">
+                            <tr>
+                                <td>
+                                    <a><b>Select Language</b></a>
+                                </td>
+                                <td>
+                                    <select id="Language" style="width:70%">
+                                        <option value="English">English</option>
+                                        <option value="French">Tamil</option>
+                                        <option value="Hindi">Hindi</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a>Payment method</a></td>
+                                <td><b>Visa</b></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td><b>Item ordered</b></td>
+                            </tr>
+                            <tr>
+                                <td>Amount</td>
+                                <td><b>£100.00</b></td>
+                                <td>
+                                    <img src="Images/Visalogo.png" Width="50" Height="50" border="1px solid black" CssClass="logo-image" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="table_bottom">
+                        <h3 class="heading">Card details </h3>
+                        <p>You must fill in fields marked with *</p>
+                        <table class="table_design">
+                            <tr>
+                                <td>*Card number</td>
+                                <td>
+                                    <input type="text" Height="15" style="width:90%" onchange="ValidateCardNumber()" ID="txtCardNumber" MaxLength="16"/>
+                                    <span id="Valid" style="display:none;color:green">
+                                        Enter the Valid Card number
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>*Security code</td>
+                                <td>
+                                    <input type="text" Height="15" style="width:70%;margin-top:3%" onchange="ValidateSecurityCode()" ID="txtSecurityCode" MaxLength="3" />
+                                    <span id="ValidSecurity" style="display:none;color:green">
+                                        Enter the Valid Security code
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>*Expiry date</td>
+                                <td>
+                                    <select class="selectDatemonth" required="required" id="month" onchange="checkExpiryMonth()" style="margin-top:3%">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                    <select class="selectDateyear" required="required" id="year" onchange="checkExpiryYear()">
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>*Cardholder's name</td>
+                                <td>
+                                    <input type="text" Height="15" style="width:90%;margin-top:3%" onblur="ValidateName()" ID="txtName" MaxLength="20"/>
+                                    <span id="ValidName" style="display:none;color:green">
+                                        Enter the Valid Cardholder's name
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+                        <h3 class="heading">Cardholder details</h3>
+                        <p>You must fill in fields marked with *</p>
+                        <table class="table_design">
+                            <tr>
+                                <td style="width:40%">*Address 1</td>
+                                <td>
+                                <input type="text" Height="15" style="width:90%;margin-top:3%" onchange="ValidateAddress1()" ID="txtAddress1" MaxLength="20"/>
+                                    <span id="ValidAddress" style="display:none;color:green">
+                                        Enter the Valid Address
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a>Address 2</a></td>
+                                <td>
+                                <input type="text" Height="15" style="width:90%;margin-top:3%" onchange="ValidateAddress2()" ID="txtAddress2" MaxLength="20"/>
+                                <span id="ValidAddress" style="display:none;color:green">
+                                        Enter the Valid Address
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Address 3</td>
+                                <td>
+                                <input type="text" Height="15" style="width:90%;margin-top:3%" onchange="ValidateAddress3()" ID="txtAddress3" MaxLength="20"/>
+                                <span id="ValidAddress" style="display:none;color:green">
+                                        Enter the Valid Address
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>*Town/City</td>
+                                <td>
+                                    <input type="text" Height="15" style="width:90%;margin-top:3%" onchange="ValidateCity()" ID="txtCity" MaxLength="10"/>
+                                    <span id="ValidTown" style="display:none;color:green">
+                                        Enter the Valid Town/City
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Region</td>
+                                <td>
+                                <input type="text" Height="15" style="width:90%;margin-top:3%" onchange="ValidateRegion()" ID="txtRegion" MaxLength="10" />
+                                    <span id="validRegion" style="display:none;color:green">
+                                        Enter the Valid Region
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>*Postcode/Zip code</td>
+                                <td>
+                                    <input type="text" Height="15" style="width:60%;margin-top:3%" onchange="ValidatePin()" ID="txtPostcode" MaxLength="6"/>
+                                    <span id="ValidPin" style="display:none;color:green">
+                                        Enter the Valid Post Code
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>*Country</td>
+                                <td>
+                                    <select id="Country" style="width:50%;margin-top:3%">
+                                        <option value="India">India</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="China">China</option>
+                                        <option value="Japan">Japan</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Telephone</td>
+                                <td>
+                                    <input type="text" Height="15" style="width:90%;margin-top:3%" onchange="ValidatePhone()" ID="txtTelephone" />
+                                    <span id="validPhone" style="display:none;color:green">
+                                        Enter the Valid Phone Number
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fax</td>
+                                <td>
+                                    <input type="text" Height="15" style="width:90%;margin-top:3%" ID="txtFax" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>*Email address</td>
+                                <td>
+                                    <input type="text" Height="15" style="width:90%;margin-top:3%" ID="txtEmail" onchange="ValidateMail()" MaxLength="30"/>
+                                    <span id="ValidMail" style="display:none;color:green">
+                                        Enter the Valid Mail
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr></tr>
+                        </table>
+                        <br /><br />
+                    </div>
+                    <div>
+                        <table style="table-layout:fixed; width: 100%">
+                            <tr>
+                                <td>
+                                    <a href="FlowerShop.html" id="flower">
+                                        <img src="Images/startAgain.png" alt="flower" Width="20" Height="20" />
+                                    </a>
+                                    <input type="button" name="StartAgain" value="STARTAGAIN" class="Button" />
+                                </td>
+                                <td style="text-align: right">
+                                    <input type="button" name="MakePayment" value="MAKEPAYMENT" class="Button" />
+                                </td>
+                                <td style="width: 18%" onclick="Submit()">
+                                    <img src="Images/Payment.png" Width="30" Height="30" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                  <a href="FlowerShop.html" id="flower">
+                                        <img src="Images/cancel.png" alt="flower" Width="20" Height="20" />
+                                    </a>
+                                    <input type="button" name="Cancel" value="CANCEL" Class="Button" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <hr />
+                    <h2>Refunds and Return</h2>
+                    <h5>For more information visit our <a href="https://www.termsfeed.com/blog/sample-return-policy-ecommerce-stores/">Refund abd Returns policy</a></h5>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="Images/pay.png" Width="150" Height="60" />
+                                </td>
+                                <td>
+                                    <h2>For help with your payment visit the <a href="https://www.worldpay.com/en-gb/index">WorldPay Help </a></h2>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="column_design">
+                    <img src="Images\questionMark.png" class="top_icon">
+                    <br>
+                    <img src="Images\questionMark.png" class="bottom_icon">
+                </div>
+            </div>
+            <div>
+                <h2 class="bottom">
+                    &nbsp;&nbsp;Thank you for shopping at Flowershop. Have a nice day
+                </h2>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
